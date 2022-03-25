@@ -55,17 +55,17 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 
 Para el ejemplo que mostramos se tienen $ N=8 $, por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
-$0.4661691533999429 \to 1$
+$ 0.4661691533999429 \to 1 $
 
-$0.9900212085683265 \to 2$
+$ 0.9900212085683265 \to 2 $
 
-$0.4876416060768133 \to 3$
+$ 0.4876416060768133 \to 3 $
 
-$0.6887360248200161 \to 4$
+$ 0.6887360248200161 \to 4 $
 
-$0.027874235454644403 \to 5$ 
+$ 0.027874235454644403 \to 5 $ 
 
-$0.7609657561616946 \to 6$
+$ 0.7609657561616946 \to 6 $
 
 Una vez ordenado de forma ascendente  tenemos: 
 
