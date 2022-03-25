@@ -92,3 +92,8 @@ Números generados $ 3 $ y  $ 6 $
 Solución inicial: $ [0, 5, 1, 3, 4, 6, 2, 7] $
 Solución vecina: $ [0, 5, 1, 2, 4, 6, 3, 7] $
 
+## 3.- Instancias
+El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
+
+Dentro de este repositorio se encuentran 3 archivos, el primer archivo es un ejemplo con 50 nodos el segundo con 100 nodos y el tercero con 500 nodos.
+
