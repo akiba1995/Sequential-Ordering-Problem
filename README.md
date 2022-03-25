@@ -34,6 +34,7 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 ![Grafo de ejemplo.](https://graphonline.ru/tmp/saved/hh/hhFcwtLeeqzqzogz.png)  
 
 **SOLUCION DE GRAFO DE EJEMPLO**
+
 ![Solucion de Grafo de ejemplo.](https://graphonline.ru/tmp/saved/gY/gYHqUXAsCVVxnMec.png)
 
 **Vector Solucion**
