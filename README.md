@@ -58,7 +58,7 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 
 ## 3.- Modelo
 ### Función objetivo
-La función objetivo para el problema de ordenamiento secuencial es la siguiente: **$\sum$ $C_{ij}$ + (n * penalización)**
+La función objetivo para el problema de ordenamiento secuencial es la siguiente: **\$\sum$ $C_{ij}\$ + (n * penalización)**
 
 Donde la **penalización** será igual al costo mayor de toda la matriz de costos y **n** representa el número de reglas de precedencia que no se cumplen.
 
@@ -100,7 +100,7 @@ def presedencia(solucion,rules):
 ### Restricciones
 
 Las restricciones con las que cuenta este problema se dividen en dos:
-1. Las reglas de precedencia son aquella que indican si un nodo debe visitarse antes que otro, la forma en la que se visitan no es necesariamente consecutiva. Se representa de la siguiente manera: $i<j$ $i ≺ j$
+1. Las reglas de precedencia son aquella que indican si un nodo debe visitarse antes que otro, la forma en la que se visitan no es necesariamente consecutiva. Se representa de la siguiente manera: $i ≺ j$
 2. La solución que se genera debe de iniciar visitando el nodo cero y terminar con el nodo N
 
 ### Representación de la solución
