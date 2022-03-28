@@ -48,11 +48,11 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 |--|--|--|--|--|--|--|--|--|
 |**0** |0 |1 |7 |2 |6 |7 |1 |5 |
 |**1** |8 |0 |2 |3 |8 |4 | 6 | 7 |
-|**2** |9 |-1 |0 |4 |1 |6 |9 |1 |
+|**2** |9 |1000 |0 |4 |1 |6 |9 |1 |
 |**3** |6 |3 |3 |0 |3 |5 |4 |3 |
 |**4** |8 |2 |3 |5 |0 |3 |7 |5 |
 |**5** |1 |5 |6 |3 |8 |0 |6 |1 |
-|**6** |7 |-1 |3 |8 |3 |6 |0 |9 |
+|**6** |7 |1000 |3 |8 |3 |6 |0 |9 |
 |**7** |4 |6 |7 |8 |3 |2 |1 |0 |
 
 
@@ -112,7 +112,7 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 
 Para el ejemplo que mostramos se tienen $ N=8 $, por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
-$ 0.4661691533999429 \to 1 $
+$$ 0.4661691533999429 \to 1 $$
 
 $ 0.9900212085683265 \to 2 $
 
