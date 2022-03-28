@@ -58,7 +58,7 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 
 ## 3.- Modelo
 ### Función objetivo
-La función objetivo para el problema de ordenamiento secuencial es la siguiente: **\$\sum$ $C_{ij}\$ + (n * penalización)**
+La función objetivo para el problema de ordenamiento secuencial es la siguiente: \$f(x) = x^2 + 1\$ \$\sum$ $C_{ij}\$ + (n * penalización)
 
 Donde la **penalización** será igual al costo mayor de toda la matriz de costos y **n** representa el número de reglas de precedencia que no se cumplen.
 
