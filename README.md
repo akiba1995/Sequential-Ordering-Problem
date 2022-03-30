@@ -113,33 +113,23 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 
 Para el ejemplo que mostramos se tienen ![](https://latex.codecogs.com/svg.image?N=8), por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
-$$ 0.4661691533999429 \to 1 $$
-
-$ 0.9900212085683265 \to 2 $
-
-$ 0.4876416060768133 \to 3 $
-
-$ 0.6887360248200161 \to 4 $
-
-$ 0.027874235454644403 \to 5 $ 
-
-$ 0.7609657561616946 \to 6 $
+![](https://latex.codecogs.com/svg.image?0.4661691533999429&space;\to&space;1)
+![](https://latex.codecogs.com/svg.image?0.9900212085683265&space;\to&space;2)
+![](https://latex.codecogs.com/svg.image?0.4876416060768133&space;\to&space;3)
+![](https://latex.codecogs.com/svg.image?0.6887360248200161&space;\to&space;4)
+![](https://latex.codecogs.com/svg.image?0.027874235454644403&space;\to&space;5)
+![](https://latex.codecogs.com/svg.image?0.7609657561616946&space;\to&space;6)
 
 Una vez ordenado de forma ascendente  tenemos: 
 
-$0.027874235454644403 \to 5$
+![](https://latex.codecogs.com/svg.image?0.027874235454644403&space;\to&space;5)
+![](https://latex.codecogs.com/svg.image?0.4661691533999429&space;\to&space;1)
+![](https://latex.codecogs.com/svg.image?0.4876416060768133&space;\to&space;3)
+![](https://latex.codecogs.com/svg.image?0.6887360248200161&space;\to&space;4)
+![](https://latex.codecogs.com/svg.image?0.7609657561616946&space;\to&space;6)
+![](https://latex.codecogs.com/svg.image?0.9900212085683265&space;\to&space;2)
 
-$0.4661691533999429 \to 1$
-
-$0.4876416060768133 \to 3$
-
-$0.6887360248200161 \to 4$
-
-$0.7609657561616946 \to 6$
-
-$0.9900212085683265 \to 2$
-
-Por lo que la representación de la solución inicial, una vez agregados los nodos inicial y final quedaría de la siguiente manera: $ [0, 5, 1, 3, 4, 6, 2, 7] $. Esto indica el orden en el que se deben ir visitando los nodos.
+Por lo que la representación de la solución inicial, una vez agregados los nodos inicial y final quedaría de la siguiente manera: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) . Esto indica el orden en el que se deben ir visitando los nodos.
 
 ### Solución vecino
 Una vez ya obtenida la solución inicial, para generar su solución vecino se debe realizar lo siguiente:
