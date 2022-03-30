@@ -58,8 +58,7 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 
 ## 3.- Modelo
 ### Función objetivo
-La función objetivo para el problema de ordenamiento secuencial es la siguiente: \\( \frac{a}{b} )\\ \$ \sum$ $C_{ij} \$ + (n * penalización)
-
+La función objetivo para el problema de ordenamiento secuencial es la siguiente: ![imagen](https://latex.codecogs.com/svg.image?\sum&space;C_{ij}&space;&plus;&space;(n&space;*&space;penalizacion))
 Donde la **penalización** será igual al costo mayor de toda la matriz de costos y **n** representa el número de reglas de precedencia que no se cumplen.
 
 El siguiente fragmento de código indica el proceso para calcular el valor de la función objetivo.
