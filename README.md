@@ -59,9 +59,11 @@ Algunas aplicaciones de este problema cuando encontramos alguna situacion como m
 ## 3.- Modelo
 ### Función objetivo
 La función objetivo para el problema de ordenamiento secuencial es la siguiente: ![](https://latex.codecogs.com/svg.image?\sum&space;C_{ij}&space;&plus;&space;(n&space;*&space;penalizacion))
+
 Donde la **penalización** será igual al costo mayor de toda la matriz de costos y **n** representa el número de reglas de precedencia que no se cumplen.
 
 El siguiente fragmento de código indica el proceso para calcular el valor de la función objetivo.
+
 ```Python
 def obtenerCosto(solucion,costos,reglas):
     #obtener el total de nodos, se pone -1 porque no es necesario recorrer el ultimo
@@ -99,12 +101,12 @@ def presedencia(solucion,rules):
 ### Restricciones
 
 Las restricciones con las que cuenta este problema se dividen en dos:
-1. Las reglas de precedencia son aquella que indican si un nodo debe visitarse antes que otro, la forma en la que se visitan no es necesariamente consecutiva. Se representa de la siguiente manera: $i ≺ j$
+1. Las reglas de precedencia son aquella que indican si un nodo debe visitarse antes que otro, la forma en la que se visitan no es necesariamente consecutiva. Se representa de la siguiente manera: ![](https://latex.codecogs.com/svg.image?i&space;<&space;j&space;)
 2. La solución que se genera debe de iniciar visitando el nodo cero y terminar con el nodo N
 
 ### Representación de la solución
 Para poder generar la solución inicial, se debe realizar los siguientes pasos:
-- Generar un arreglo de $N-2$ números aleatorios en un intervalo de $[0,1]$
+- Generar un arreglo de ![](https://latex.codecogs.com/svg.image?N&space;-&space;2) números aleatorios en un intervalo de ![](https://latex.codecogs.com/svg.image?[0,1])
 - Ordenar de forma ascendente el arreglo de acuerdo al valor.
 - Tomar los índices del arreglo ordenado para generar la solución inicial.
 - Por último, para completar los nodos a visitar y cumplir con la segunda restricción se añade al inicio del arreglo el nodo $ 0 $ y al final el nodo $ N $
