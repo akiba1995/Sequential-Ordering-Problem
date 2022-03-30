@@ -114,19 +114,29 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 Para el ejemplo que mostramos se tienen ![](https://latex.codecogs.com/svg.image?N=8), por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
 ![](https://latex.codecogs.com/svg.image?0.4661691533999429&space;\to&space;1)
+
 ![](https://latex.codecogs.com/svg.image?0.9900212085683265&space;\to&space;2)
+
 ![](https://latex.codecogs.com/svg.image?0.4876416060768133&space;\to&space;3)
+
 ![](https://latex.codecogs.com/svg.image?0.6887360248200161&space;\to&space;4)
+
 ![](https://latex.codecogs.com/svg.image?0.027874235454644403&space;\to&space;5)
+
 ![](https://latex.codecogs.com/svg.image?0.7609657561616946&space;\to&space;6)
 
 Una vez ordenado de forma ascendente  tenemos: 
 
 ![](https://latex.codecogs.com/svg.image?0.027874235454644403&space;\to&space;5)
+
 ![](https://latex.codecogs.com/svg.image?0.4661691533999429&space;\to&space;1)
+
 ![](https://latex.codecogs.com/svg.image?0.4876416060768133&space;\to&space;3)
+
 ![](https://latex.codecogs.com/svg.image?0.6887360248200161&space;\to&space;4)
+
 ![](https://latex.codecogs.com/svg.image?0.7609657561616946&space;\to&space;6)
+
 ![](https://latex.codecogs.com/svg.image?0.9900212085683265&space;\to&space;2)
 
 Por lo que la representación de la solución inicial, una vez agregados los nodos inicial y final quedaría de la siguiente manera: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) . Esto indica el orden en el que se deben ir visitando los nodos.
