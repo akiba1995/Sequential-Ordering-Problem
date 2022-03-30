@@ -109,9 +109,9 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 - Generar un arreglo de ![](https://latex.codecogs.com/svg.image?N&space;-&space;2) números aleatorios en un intervalo de ![](https://latex.codecogs.com/svg.image?[0,1])
 - Ordenar de forma ascendente el arreglo de acuerdo al valor.
 - Tomar los índices del arreglo ordenado para generar la solución inicial.
-- Por último, para completar los nodos a visitar y cumplir con la segunda restricción se añade al inicio del arreglo el nodo $ 0 $ y al final el nodo $ N $
+- Por último, para completar los nodos a visitar y cumplir con la segunda restricción se añade al inicio del arreglo el nodo ![](https://latex.codecogs.com/svg.image?0) y al final el nodo ![](https://latex.codecogs.com/svg.image?N)
 
-Para el ejemplo que mostramos se tienen $ N=8 $, por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
+Para el ejemplo que mostramos se tienen ![](https://latex.codecogs.com/svg.image?N=8), por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
 $$ 0.4661691533999429 \to 1 $$
 
