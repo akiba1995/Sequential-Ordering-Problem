@@ -146,9 +146,8 @@ Una vez ya obtenida la solución inicial, para generar su solución vecino se de
 - Obtener dos números aleatorios entre 1 y N-2 (para no alterar el primer y último nodo), que representaran los indices de los nodos a intercambiar.
 - Proceder a realizar el intercambio entre los nodos.
 
-Números generados $ 3 $ y  $ 6 $
-Solución inicial: $ [0, 5, 1, 3, 4, 6, 2, 7] $
-Solución vecina: $ [0, 5, 1, 2, 4, 6, 3, 7] $
+Números generados ![](https://latex.codecogs.com/svg.image?2) y  ![](https://latex.codecogs.com/svg.image?6)
+Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) Solución vecina: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;2,&space;4,&space;6,&space;3,&space;7])
 
 ## 4.- Instancias
 El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
