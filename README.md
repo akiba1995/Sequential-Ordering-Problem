@@ -155,3 +155,41 @@ El formato del archivo es csv en el que se encuentran almacenados la matriz de c
 
 Dentro de este repositorio se encuentran 3 archivos, el primer archivo es un ejemplo con 50 nodos el segundo con 100 nodos y el tercero con 500 nodos.
 
+```Python
+def readFile(size, name):
+    m = np.zeros((0), dtype=int)
+    m_prec = np.zeros((0), dtype=int)
+    
+    with open(name, newline='') as File:  
+        reader = csv.reader(File, delimiter=',', quotechar=',',quoting=csv.QUOTE_MINIMAL)
+        i=0
+        for row in File:
+            
+            row = row.rstrip()
+            separador = ","
+            row = row.split(",")
+            row = list(map(int, row))
+            m_np = np.array(row)
+            
+            if i < size :
+                m = np.append(m, m_np, axis=0)
+                #print(m_np)
+            else:
+                m_prec = np.append(m_prec, m_np, axis=0)
+            i+=1
+    
+    m = np.array(m).reshape(size,size)
+    m_prec = np.array(m_prec).reshape(int((len(m_prec)/2)),2)
+    return m, m_prec
+```
+
+En este repositorio hay tres archivos con extension .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
+
+```Python
+name = 'datos50.csv'
+m, m_prec = readFile(nodos, name)
+```
+**donde:** 
+- m es la matriz de costos.
+- m_prec es el arreglo de precedencias.
+- name es el nombre del archivo con todo y extensión.
