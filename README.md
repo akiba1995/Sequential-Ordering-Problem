@@ -153,7 +153,7 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 ## 4.- Instancias
 El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
 
-Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y el tercero con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
+Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
 
 ```Python
 def readFile(size, name):
@@ -183,8 +183,8 @@ def readFile(size, name):
     return m, m_prec
 ```
 
-En este repositorio hay tres archivos con extension .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
-
+Los ejemplos de las instancias están en archivos con extension .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
+El archivo .csv debe estár en el directorio de trabajo.
 ```Python
 name = 'datos50.csv'
 m, m_prec = readFile(nodos, name)
@@ -193,6 +193,10 @@ m, m_prec = readFile(nodos, name)
 - m es la matriz de costos.
 - m_prec es el arreglo de precedencias.
 - name es el nombre del archivo con todo y extensión.
+
+Para la primaera instancia con **100 nodos** nuestros resultados fueron:
+- Costo 1059
+- Tiempo 0.76108 seg.
 
 ## 5.- Ejemplo de ejecución
 como ejemplo de ejecucion, ocuparemos la red mostrada en la seccion **2.3 Ejemplo**
