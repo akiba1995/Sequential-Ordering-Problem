@@ -183,7 +183,7 @@ def readFile(size, name):
     return m, m_prec
 ```
 
-Los ejemplos de las instancias están en archivos con extension .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
+Los ejemplos de las instancias están en archivos con extensión .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
 El archivo .csv debe estár en el directorio de trabajo.
 ```Python
 name = 'datos50.csv'
@@ -194,12 +194,12 @@ m, m_prec = readFile(nodos, name)
 - m_prec es el arreglo de precedencias.
 - name es el nombre del archivo con todo y extensión.
 
-Para la primaera instancia con **100 nodos** nuestros resultados fueron:
+Para la primera instancia con **100 nodos** nuestros resultados fueron:
 - Costo 1059
 - Tiempo 0.76108 seg.
 
 ## 5.- Ejemplo de ejecución
-como ejemplo de ejecucion, ocuparemos la red mostrada en la seccion **2.3 Ejemplo**
+Como ejemplo de ejecución, ocuparemos la red mostrada en la sección **2.3 Ejemplo**
 
 Los parametros ocupados para el recocido simulado fueron;
 
@@ -211,4 +211,4 @@ y las salidas fueron las siguientes;
 - Costo: 21
 - Tiempo 0.012 seg.
 
-Con el simple echo de visializar la red de nodos se puede deducir el costo menor, por lo que tiene una solucion exacta y es **[0, 1, 3, 6, 2, 4, 5, 7]** con un costo mínimo de **16**
+Con el simple hecho de visualizar la red de nodos se puede deducir el costo menor, por lo que tiene una solución exacta y es **[0, 1, 3, 6, 2, 4, 5, 7]** con un costo mínimo de **16**
