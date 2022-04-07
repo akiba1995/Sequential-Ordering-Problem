@@ -153,7 +153,7 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 ## 4.- Instancias
 El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
 
-Dentro de este repositorio se encuentran 3 archivos, el primer archivo es un ejemplo con 50 nodos el segundo con 100 nodos y el tercero con 500 nodos.
+Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y el tercero con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
 
 ```Python
 def readFile(size, name):
