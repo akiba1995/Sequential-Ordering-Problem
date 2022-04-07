@@ -193,3 +193,18 @@ m, m_prec = readFile(nodos, name)
 - m es la matriz de costos.
 - m_prec es el arreglo de precedencias.
 - name es el nombre del archivo con todo y extensión.
+
+## 5.- Ejemplo de ejecución
+como ejemplo de ejecucion, ocuparemos la red mostrada en la seccion **2.3 Ejemplo**
+
+Los parametros ocupados para el recocido simulado fueron;
+
+- temperatura 100
+- alpha 0.5
+
+y las salidas fueron las siguientes;
+- Solucion: [0, 1, 5, 3, 6, 2, 4, 7]
+- Costo: 21
+- Tiempo 0.012 seg.
+
+Con el simple echo de visializar la red de nodos se puede deducir el costo menor, por lo que tiene una solucion exacta y es **[0, 1, 3, 6, 2, 4, 5, 7]** con un costo mínimo de **16**
