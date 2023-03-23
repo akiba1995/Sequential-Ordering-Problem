@@ -188,9 +188,9 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 
 ### 4.1 Propuesta de instancias ###
 
--NAME: ESC11.sop
--TYPE: SOP
--COMMENT: Received by Norbert Ascheuer / Laureano Escudero
+- NAME: ESC11.sop
+- TYPE: SOP
+- COMMENT: Received by Norbert Ascheuer / Laureano Escudero
 
 | |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |10 |11 |12 |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
