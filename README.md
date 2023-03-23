@@ -188,9 +188,9 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 
 ### 4.1 Propuesta de instancias ###
 
-NAME: ESC11.sop
-TYPE: SOP
-COMMENT: Received by Norbert Ascheuer / Laureano Escudero
+-NAME: ESC11.sop
+-TYPE: SOP
+-COMMENT: Received by Norbert Ascheuer / Laureano Escudero
 
 | |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |10 |11 |12 |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -207,6 +207,7 @@ COMMENT: Received by Norbert Ascheuer / Laureano Escudero
 |**10** |-1  |978  |839  |918  |822  |885  |276   |96  |537  |211    |0  |608    |0|
 |**11** |-1  |864  |168  |211  |455  |543  |904  |412  |535  |954  |971    |0    |0|
 |**12** |-1   |-1   |-1   |-1   |-1   |-1   |-1   |-1   |-1   |-1   |-1   |-1    |0|
+
 El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
 
 Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
