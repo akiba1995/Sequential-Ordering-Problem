@@ -1,32 +1,32 @@
 # Sequential-Ordering-Problem
 
-## 1.-Introduccion ##
+## 1.-Introducción ##
 
-El presente documento plantea una propuesta de solucion para la codificacion de el problema de ordenamiento secuencial, en el cual se utiliza la metodologia de recocido simulado.
+El presente documento plantea una propuesta de solucion para la codificacion del problema de ordenamiento secuencial, en el cual se utiliza la metodología de recocido simulado.
 
 
 ## 2.-Problema ##
 
 ### 2.1.-Definición del problema ###
 
-El problema de ordenamiento secuencial consiste en encontrar un camino hamiltonanio de costo minimo, esto quiere decir que se debe encontrar un camino que conecte todos los nodos con el menor costo. La representacion del grafo debe ser un grafo dirigido con costos asociados a los ejes y relaciones de precedencia entre los nodos. Al hablar de relaciones de presedencia, nos referimos a una o mas reglas en el grafo que indican que nodos se deben visitar primero.Este problema puede verse como una variante del TSP, la diferencia principal recae en que el grafo debe ser asincrono debido a la presedencia. Pero tampoco podemos decir que se trata de un problema ATSP.
+El problema de ordenamiento secuencial consiste en encontrar un camino hamiltoniano de costo mínimo, esto quiere decir que se debe encontrar un camino que conecte todos los nodos con el menor costo. La representación del grafo debe ser un grafo dirigido con costos asociados a los ejes y relaciones de precedencia entre los nodos. Al hablar de relaciones de precedencia, nos referimos a una o más reglas en el grafo que indican que nodos se deben visitar primero.Este problema puede verse como una variante del TSP, la diferencia principal recae en que el grafo debe ser asícrono debido a la precedencia. Pero tampoco podemos decir que se trata de un problema ATSP.
 De manera formal el problema se define de la siguiente forma;
 
-Sea ![](https://latex.codecogs.com/svg.image?G=(V,E)) un grafo dirigido completo, donde ![](https://latex.codecogs.com/svg.image?V={0,1,2,3...}) es el conjunto de nodos y ![](https://latex.codecogs.com/svg.image?E={(i,j)|&space;i,j&space;E&space;V,/=j}.) Cada eje ![](https://latex.codecogs.com/svg.image?(i,j)&space;\in&space;&space;E) tiene un costo asociado ![](https://latex.codecogs.com/svg.image?Cij>=0.) Ademas, se define el grafo de precedencias ![](https://latex.codecogs.com/svg.image?P=(V,R)) con el mismo conjunto de nodos V .
+Sea ![](https://latex.codecogs.com/svg.image?G=(V,E)) un grafo dirigido completo, donde ![](https://latex.codecogs.com/svg.image?V={0,1,2,3...}) es el conjunto de nodos y ![](https://latex.codecogs.com/svg.image?E={(i,j)|&space;i,j&space;E&space;V,/=j}.) Cada eje ![](https://latex.codecogs.com/svg.image?(i,j)&space;\in&space;&space;E) tiene un costo asociado ![](https://latex.codecogs.com/svg.image?Cij>=0.) Además, se define el grafo de precedencias ![](https://latex.codecogs.com/svg.image?P=(V,R)) con el mismo conjunto de nodos V.
 
-Un camino que recorre todos los nodos sin repetirlos, comenzando en el 0 y terminando en n, y satisface todas las condiciones de precedencia es una solucion factible del SOP. El objetivo del SOP es encontrar una solucion factible de mınimo costo, donde el costo esta dado por la sumatoria de los costos de los ejes que componen el camino.
+Un camino que recorre todos los nodos sin repetirlos, comenzando en el 0 y terminando en n, y satisface todas las condiciones de precedencia es una solución factible del SOP. El objetivo del SOP es encontrar una solución factible de mínimo costo, donde el costo está dado por la sumatoria de los costos de los ejes que componen el camino.
 
 
 ### 2.2 Aplicaciones ###
-Algunas aplicaciones de este problema cuando encontramos alguna situacion como mejoramientos en cadenas de produccion, planificacion y ruteo por ejemplo:
+Una de las aplicaciones de este problema cuando encontramos alguna situacion como mejoramiento en cadenas de produccion, planificacion y ruteo, por ejemplo:
 
-**Planificacion de produccion:** Minimizar tiempo de ejecucion de varios trabajos, que deben ser proceso en cierto orden por una maquina.
+**Planificacion de produccion:** Minimizar el tiempo de ejecución de varios trabajos, que deben ser procesados en cierto orden por una máquina.
 
-**Optimizacion:** En el uso de una grua portuaria eliminando cuellos de botella.
+**Optimizacion:** En el uso de una grúa portuaria eliminando cuellos de botella.
 
-**Problemas de transporte** por ejemplo minimizar la distancia recorrida por un helicoptero que debe transportar personal tecnico entre diferentes plataformas en una compañia petrolera.
+**Problemas de transporte** por ejemplo, minimizar la distancia recorrida por un helicóptero que debe transportar personal técnico entre diferentes plataformas en una compañía petrolera.
 
-**Optimizaciones en fabricas** por ejemplo en manufactura del automotor, en el sistema de pintado de los autos, para minimizar costos de cambio de color de la pintura.
+**Optimizaciones en fábricas** por ejemplo, en la manufactura del automotor, en el sistema de pintado de los autos, para minimizar costos de cambio de color de la pintura.
 
 
 ### 2.3 Ejemplo ### 
