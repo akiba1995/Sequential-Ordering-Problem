@@ -2,14 +2,14 @@
 
 ## 1.-Introduccion ##
 
-El presente documento plantea una solucion de programacion para, el problema de ordenamiento secuencial, en el cual se sigue la metodologia de resolverlo con el algoritmo de recocido simulado.
+El presente documento plantea una propuesta de solucion para la codificacion de el problema de ordenamiento secuencial, en el cual se utiliza la metodologia de recocido simulado.
 
 
 ## 2.-Problema ##
 
-### 2.1.-Definicion del problema ###
+### 2.1.-Definición del problema ###
 
-El problema de ordenamiento secuencial consiste en encontrar un camino hamiltonanio de costo minimo, esto quiere decir que se debe encontrar el camino con los menores costos. El grafo con el que se debe representar debe ser un grafo dirigido con costos asociados a los ejes y relaciones de precedencia entre los nodos. Al hablar de relaciones de presedencia, nos referimos a una o mas reglas en el grafo que indican que nodos se deben visitar primero.Este problema puede verse como una variante del TSP, la diferencia principal recae en que el grafo debe ser asincrono debido a la presedencia. Pero tampoco podemos decir que se trata de un problema ATSP.
+El problema de ordenamiento secuencial consiste en encontrar un camino hamiltonanio de costo minimo, esto quiere decir que se debe encontrar un camino que conecte todos los nodos con el menor costo. La representacion del grafo debe ser un grafo dirigido con costos asociados a los ejes y relaciones de precedencia entre los nodos. Al hablar de relaciones de presedencia, nos referimos a una o mas reglas en el grafo que indican que nodos se deben visitar primero.Este problema puede verse como una variante del TSP, la diferencia principal recae en que el grafo debe ser asincrono debido a la presedencia. Pero tampoco podemos decir que se trata de un problema ATSP.
 De manera formal el problema se define de la siguiente forma;
 
 Sea ![](https://latex.codecogs.com/svg.image?G=(V,E)) un grafo dirigido completo, donde ![](https://latex.codecogs.com/svg.image?V={0,1,2,3...}) es el conjunto de nodos y ![](https://latex.codecogs.com/svg.image?E={(i,j)|&space;i,j&space;E&space;V,/=j}.) Cada eje ![](https://latex.codecogs.com/svg.image?(i,j)&space;\in&space;&space;E) tiene un costo asociado ![](https://latex.codecogs.com/svg.image?Cij>=0.) Ademas, se define el grafo de precedencias ![](https://latex.codecogs.com/svg.image?P=(V,R)) con el mismo conjunto de nodos V .
