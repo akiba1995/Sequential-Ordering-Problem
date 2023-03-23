@@ -184,6 +184,70 @@ def solucionVecino(solucion,reglas):
 Números generados ![](https://latex.codecogs.com/svg.image?2) y  ![](https://latex.codecogs.com/svg.image?6)
 Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) Solución vecina: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;2,&space;4,&space;6,&space;3,&space;7])
 
+## 3.5- Vecindad como penalización
+
+Otra forma de penalizar es checar la distancia entre los nodos en su valor numérico, es decir entre más alejado estén dos números mayor es la penalización
+#### Función objetivo
+
+```Python
+def obj(seq, cost_matrix):
+    # Calcula la función objetivo para la secuencia dada
+    n = len(seq)
+    total_cost = 0
+    for i in range(n-1):
+        for j in range(i+1, n):
+            cost = cost_matrix[seq[i]][seq[j]]
+            dist = abs(i-j)
+            total_cost += cost * dist
+    return total_cost
+```
+#### Generación de matriz de costos
+
+Para poder generar una matriz de costos, basta una lista de aristas bajo el siguiente esquema $[(0,1, 15), ...]$ donde cada tupla representa el nodo de origen, el destino y su costo
+
+```Python
+def create_cost_matrix(edges, n):
+    # Crea una matriz de costos a partir de una lista de aristas
+    cost_matrix = [[float('inf')] * n for i in range(n)]
+    for u, v, cost in edges:
+        cost_matrix[u][v] = cost
+    return cost_matrix
+```
+
+#### Ejecución
+
+Para la parte de la ejecución tenemos el siguiente implementación 
+
+```Python
+import random
+
+def local_search(cost_matrix, max_iterations):
+    # Algoritmo de búsqueda local para el SO con matriz de costos
+    n = len(cost_matrix)
+    seq = list(range(n)) #toma el numero nodos de forma secuencial como sequencia inicial [0, 1, ...., N]
+    best_seq = seq
+    best_cost = obj(seq, cost_matrix)
+    for i in range(max_iterations):
+        # Intercambia dos nodos aleatorios en la secuencia
+        u, v = random.sample(range(n), 2)
+        seq[u], seq[v] = seq[v], seq[u]
+        # Calcula el costo de la nueva secuencia
+        cost = obj(seq, cost_matrix)
+        # Si la nueva secuencia es mejor, actualiza la mejor solución
+        if cost < best_cost:
+            best_seq = seq.copy()
+            best_cost = cost
+    return best_seq, best_cost
+```
+
+```Python
+costMatrix = create_cost_matrix(edges, n)
+
+import time
+saveTime = time.time()
+best_seq,best_cost = local_search(costMatrix, max_iterations= 1000000)
+print (f'The best cost found it was {best_cost} with this sequence {best_seq} with {time.time()-saveTime} seconds')
+```
 ## 4.- Instancias
 
 ### 4.1 Propuesta de instancias ###
