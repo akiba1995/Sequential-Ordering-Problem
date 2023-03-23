@@ -22,7 +22,7 @@ Una de las aplicaciones de este problema cuando encontramos alguna situacion com
 
 **Planificacion de produccion:** Minimizar el tiempo de ejecución de varios trabajos, que deben ser procesados en cierto orden por una máquina.
 
-**Optimizacion:** En el uso de una grúa portuaria eliminando cuellos de botella.
+**Optimización:** En el uso de una grúa portuaria eliminando cuellos de botella.
 
 **Problemas de transporte** por ejemplo, minimizar la distancia recorrida por un helicóptero que debe transportar personal técnico entre diferentes plataformas en una compañía petrolera.
 
@@ -185,6 +185,8 @@ Números generados ![](https://latex.codecogs.com/svg.image?2) y  ![](https://la
 Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) Solución vecina: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;2,&space;4,&space;6,&space;3,&space;7])
 
 ## 4.- Instancias
+
+### 4.1 Propuesta de instancias. ###
 El formato del archivo es csv en el que se encuentran almacenados la matriz de costos y la matriz de precedencia.
 
 Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
