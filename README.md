@@ -260,15 +260,16 @@ def solucionInicial(numNodos,reglas):
 ```Python
 def solucionVecino(solucion,reglas):
     #generar las posiciones a cambiar
+    vecino = solcion.copy()
     pos1 = random.randint(1,len(solucion)-2)
     pos2 = random.randint(1,len(solucion)-2)
     while (pos1 == pos2):
         pos2 = random.randint(1,len(solucion)-2)
     #print(pos1, ',', pos2)
     #Relizamos el cambio de acuerdo a los indices 
-    solucion[pos1],solucion[pos2] = solucion[pos2],solucion[pos1]
-    solucion = corregirPrecedencia(solucion[:],reglas,len(solucion))
-    return solucion
+    vecino[pos1],vecino[pos2] = vecino[pos2],vecino[pos1]
+    vecino = corregirPrecedencia(vecino[:],reglas,len(vecino))
+    return vecino
 ```
 
 ```Python
