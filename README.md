@@ -63,42 +63,6 @@ La función objetivo para el problema de ordenamiento secuencial es la siguiente
 
 Donde la **penalización** será igual al costo mayor de toda la matriz de costos y **n** representa el número de reglas de precedencia que no se cumplen.
 
-El siguiente fragmento de código indica el proceso para calcular el valor de la función objetivo.
-
-```Python
-def obtenerCosto(solucion,costos,reglas):
-    #obtener el total de nodos, se pone -1 porque no es necesario recorrer el ultimo
-    nodos = len(solucion)-1 
-    #Se obtiene el costo maximo de la tabla (es el que se usara para la penalización)
-    costoMax = max(max(fila) for fila in a)
-    costoTotal = 0
-    # su suman los costos C de la solución
-    for i in range(nodos):
-        costoTotal += costos[solucion[i]][solucion[i+1]] 
-    n = presedencia(solucion,reglas)
-    costoTotal += n * costoMax
-    return costoTotal
-```
-Para revisar las precedencias se utilizo la siguiente función
-
-```Python
-def presedencia(solucion,rules):
-    #tiene que variar estos arreglos dependiendo de cuantas reglas aya.
-    auxB = np.zeros(len(rules))
-    cont = 0
-    for i in range(len(solucion)):
-        for j in range(len(rules)):       
-            if rules[j][0] == solucion[i] :
-                auxB[j]+=1       
-            if auxB[j] == 1 :
-                if rules[j][1] == solucion[i] :
-                    auxB[j]+=1               
-    for i in range(len(auxB)):
-        if auxB[i] < 2 :
-            cont+=1
-    return cont
-```
-
 ### Restricciones
 
 Las restricciones con las que cuenta este problema se dividen en dos:
@@ -112,25 +76,6 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 - Tomar los índices del arreglo ordenado para generar la solución inicial.
 - Por último, para completar los nodos a visitar y cumplir con la segunda restricción se añade al inicio del arreglo el nodo ![](https://latex.codecogs.com/svg.image?0) y al final el nodo ![](https://latex.codecogs.com/svg.image?N)
 
-```Python
-def solucionInicial(numNodos,reglas):
-    solucionTemp = []
-    solucion = []
-    #generacion de numeros aleatorios con su indice para obtener la primera solucion
-    for i in range(numNodos-2):
-        solucionTemp.append([i+1,random.random()])
-    #Se reordenan para poder decidir en que orden visitar los nodos
-    solucionTemp.sort(key=itemgetter(1))
-    # El primero nodo debe ser siempre el cero
-    solucion.append(0)
-    #agregar los demas nodos
-    for i in list(solucionTemp):
-        solucion.append(i[0])
-    #El ultimo nodo debe ser numNodos-1
-    solucion.append(numNodos-1)
-    solucion = corregirPrecedencia(solucion[:],reglas,numNodos)
-    return solucion
-```
 
 Para el ejemplo que mostramos se tienen ![](https://latex.codecogs.com/svg.image?N=8), por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
@@ -167,20 +112,6 @@ Una vez ya obtenida la solución inicial, para generar su solución vecino se de
 - Obtener dos números aleatorios entre 1 y N-2 (para no alterar el primer y último nodo), que representaran los indices de los nodos a intercambiar.
 - Proceder a realizar el intercambio entre los nodos.
 
-```Python
-def solucionVecino(solucion,reglas):
-    #generar las posiciones a cambiar
-    pos1 = random.randint(1,len(solucion)-2)
-    pos2 = random.randint(1,len(solucion)-2)
-    while (pos1 == pos2):
-        pos2 = random.randint(1,len(solucion)-2)
-    #print(pos1, ',', pos2)
-    #Relizamos el cambio de acuerdo a los indices 
-    solucion[pos1],solucion[pos2] = solucion[pos2],solucion[pos1]
-    solucion = corregirPrecedencia(solucion[:],reglas,len(solucion))
-    return solucion
-```
-
 Números generados ![](https://latex.codecogs.com/svg.image?2) y  ![](https://latex.codecogs.com/svg.image?6)
 Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;3,&space;4,&space;6,&space;2,&space;7]) Solución vecina: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1,&space;2,&space;4,&space;6,&space;3,&space;7])
 
@@ -189,18 +120,6 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 Otra forma de penalizar es checar la distancia entre los nodos en su valor numérico, es decir entre más alejado estén dos números mayor es la penalización
 #### Función objetivo
 
-```Python
-def obj(seq, cost_matrix):
-    # Calcula la función objetivo para la secuencia dada
-    n = len(seq)
-    total_cost = 0
-    for i in range(n-1):
-        for j in range(i+1, n):
-            cost = cost_matrix[seq[i]][seq[j]]
-            dist = abs(i-j)
-            total_cost += cost * dist
-    return total_cost
-```
 #### Generación de matriz de costos
 
 Para poder generar una matriz de costos, basta una lista de aristas bajo el siguiente esquema $[(0,1, 15), ...]$ donde cada tupla representa el nodo de origen, el destino y su costo
