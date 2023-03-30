@@ -118,55 +118,7 @@ Solución inicial: ![](https://latex.codecogs.com/svg.image?[0,&space;5,&space;1
 ## 3.5- Vecindad como penalización
 
 Otra forma de penalizar es checar la distancia entre los nodos en su valor numérico, es decir entre más alejado estén dos números mayor es la penalización
-#### Función objetivo
 
-#### Generación de matriz de costos
-
-Para poder generar una matriz de costos, basta una lista de aristas bajo el siguiente esquema $[(0,1, 15), ...]$ donde cada tupla representa el nodo de origen, el destino y su costo
-
-```Python
-def create_cost_matrix(edges, n):
-    # Crea una matriz de costos a partir de una lista de aristas
-    cost_matrix = [[float('inf')] * n for i in range(n)]
-    for u, v, cost in edges:
-        cost_matrix[u][v] = cost
-    return cost_matrix
-```
-
-#### Ejecución
-
-Para la parte de la ejecución tenemos el siguiente implementación 
-
-```Python
-import random
-
-def local_search(cost_matrix, max_iterations):
-    # Algoritmo de búsqueda local para el SO con matriz de costos
-    n = len(cost_matrix)
-    seq = list(range(n)) #toma el numero nodos de forma secuencial como sequencia inicial [0, 1, ...., N]
-    best_seq = seq
-    best_cost = obj(seq, cost_matrix)
-    for i in range(max_iterations):
-        # Intercambia dos nodos aleatorios en la secuencia
-        u, v = random.sample(range(n), 2)
-        seq[u], seq[v] = seq[v], seq[u]
-        # Calcula el costo de la nueva secuencia
-        cost = obj(seq, cost_matrix)
-        # Si la nueva secuencia es mejor, actualiza la mejor solución
-        if cost < best_cost:
-            best_seq = seq.copy()
-            best_cost = cost
-    return best_seq, best_cost
-```
-
-```Python
-costMatrix = create_cost_matrix(edges, n)
-
-import time
-saveTime = time.time()
-best_seq,best_cost = local_search(costMatrix, max_iterations= 1000000)
-print (f'The best cost found it was {best_cost} with this sequence {best_seq} with {time.time()-saveTime} seconds')
-```
 ## 4.- Instancias
 
 ### 4.1 Propuesta de instancias ###
@@ -263,6 +215,147 @@ def obtenerCosto (solucion, costos, reglas):
   n =  presedencia(solucion, reglas)
   costoTotal += n* costoMax  
   return costoTotal
+```
+
+```Python
+def presedencia(solucion, rules):
+  #tiene que variar estos arreglos dependiendo de la cantidad de reglas
+  auxB = np.zeros(len(rules))
+  cont = 0
+
+  for i in range (len(solucion)):
+    for j in range(len(rules)):
+      if rules[j][0] == solucion[i]:
+        auxB[j]+=1
+      if auxB[j]== 1:
+        if rules[j][1] == solucion[i]:
+          auxB[j]+=1
+  for i in range(len(auxB)):
+    if auxB[i] <2:
+      cont +=1
+  return cont
+```
+
+```Python
+def solucionInicial(numNodos,reglas):
+    solucionTemp = []
+    solucion = []
+    #generacion de numeros aleatorios con su indice para obtener la primera solucion
+    for i in range(numNodos-2):
+        solucionTemp.append([i+1,random.random()])
+    #Se reordenan para poder decidir en que orden visitar los nodos
+    solucionTemp.sort(key=itemgetter(1))
+    # El primero nodo debe ser siempre el cero
+    solucion.append(0)
+    #agregar los demas nodos
+    for i in list(solucionTemp):
+        solucion.append(i[0])
+    #El ultimo nodo debe ser numNodos-1
+    solucion.append(numNodos-1)
+    solucion = corregirPrecedencia(solucion[:],reglas,numNodos)
+    return solucion
+     
+```
+
+```Python
+def solucionVecino(solucion,reglas):
+    #generar las posiciones a cambiar
+    pos1 = random.randint(1,len(solucion)-2)
+    pos2 = random.randint(1,len(solucion)-2)
+    while (pos1 == pos2):
+        pos2 = random.randint(1,len(solucion)-2)
+    #print(pos1, ',', pos2)
+    #Relizamos el cambio de acuerdo a los indices 
+    solucion[pos1],solucion[pos2] = solucion[pos2],solucion[pos1]
+    solucion = corregirPrecedencia(solucion[:],reglas,len(solucion))
+    return solucion
+```
+
+```Python
+def corregirPrecedencia(solucion, reglas, numNodos):
+    # Se recorre la lista de reglas
+    for regla in reglas:
+        nodoA = regla[0]
+        nodoB = regla[1]
+
+        # Se busca la posición de los nodos en la solución actual
+        posA = solucion.index(nodoA)
+        posB = solucion.index(nodoB)
+
+        # Si la posición de B es menor que la de A, se intercambian los nodos
+        if posB < posA:
+            solucion[posA], solucion[posB] = solucion[posB], solucion[posA]
+
+    # Se verifica que la solución corregida contenga todos los nodos
+    assert set(solucion) == set(range(numNodos))
+
+    return solucion
+
+```
+
+```Python
+def readFile(size, name):
+    m = np.zeros((0), dtype=int)
+    m_prec = np.zeros((0), dtype=int)
+    
+    with open(name, newline='') as File:  
+        reader = csv.reader(File, delimiter=',', quotechar=',',quoting=csv.QUOTE_MINIMAL)
+        i=0
+        for row in File:
+            
+            row = row.rstrip()
+            separador = ","
+            row = row.split(",")
+            row = list(map(int, row))
+            m_np = np.array(row)
+            
+            if i < size :
+                m = np.append(m, m_np, axis=0)
+                #print(m_np)
+            else:
+                m_prec = np.append(m_prec, m_np, axis=0)
+            i+=1
+    
+    m = np.array(m).reshape(size,size)
+    m_prec = np.array(m_prec).reshape(int((len(m_prec)/2)),2)
+    return m, m_prec
+```
+
+```Python
+
+name = '100.txt'
+nodos = 100
+m, m_prec = readFile(nodos, name)
+
+print(f'{m}')
+
+```
+
+```Python
+def local_search(cost_matrix, reglas, numNodos, max_iterations):
+    # Algoritmo de búsqueda local para el SO con matriz de costos
+    
+    best_seq = solucionInicial(numNodos, reglas)
+    best_cost = obtenerCosto(best_seq, cost_matrix, reglas )
+    for i in range(max_iterations):
+        # Intercambia  nodos aleatorios en la secuencia
+        new_sol = solucionVecino(best_seq, reglas)
+        # Calcula el costo de la nueva secuencia
+        cost = obtenerCosto(new_sol,cost_matrix,reglas)
+        # Si la nueva secuencia es mejor, actualiza la mejor solución
+        if cost < best_cost:
+            best_seq = new_sol.copy()
+            best_cost = cost
+    return best_seq, best_cost
+```
+
+
+```Python
+
+
+best_seq, best_cost = local_search(m, m_prec, 100, 10000)
+
+print (f'El mejor costo es {best_cost} con la siguiente secuencia \n{best_seq}')
 ```
 
 Los ejemplos de las instancias están en archivos con extensión .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
