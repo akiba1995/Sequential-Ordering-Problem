@@ -322,7 +322,7 @@ def readFile(size, name):
 ```
 
 ```Python
-
+#Lectura de los datos
 name = '100.txt'
 nodos = 100
 m, m_prec = readFile(nodos, name)
