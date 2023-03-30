@@ -247,31 +247,22 @@ El formato del archivo es csv en el que se encuentran almacenados la matriz de c
 Dentro de este repositorio se encuentran 2 archivos, el primer archivo es un ejemplo con 100 nodos el segundo con 2500 nodos y con 15 000 nodos, este último está en la siguiente [liga](https://drive.google.com/file/d/1qvtI9ea8AAPUGQeJUUcDSoUcB3g6PM-f/view?usp=sharing).
 
 ```Python
-def readFile(size, name):
-    m = np.zeros((0), dtype=int)
-    m_prec = np.zeros((0), dtype=int)
-    
-    with open(name, newline='') as File:  
-        reader = csv.reader(File, delimiter=',', quotechar=',',quoting=csv.QUOTE_MINIMAL)
-        i=0
-        for row in File:
-            
-            row = row.rstrip()
-            separador = ","
-            row = row.split(",")
-            row = list(map(int, row))
-            m_np = np.array(row)
-            
-            if i < size :
-                m = np.append(m, m_np, axis=0)
-                #print(m_np)
-            else:
-                m_prec = np.append(m_prec, m_np, axis=0)
-            i+=1
-    
-    m = np.array(m).reshape(size,size)
-    m_prec = np.array(m_prec).reshape(int((len(m_prec)/2)),2)
-    return m, m_prec
+#funcion para obtener el costo
+
+def obtenerCosto (solucion, costos, reglas):
+  #obtener el total de nodos -1 (no es necesario revisar el ultimo nodo)
+  nodos = len(solucion) -1
+
+  #se obtine el costo máximo de la tabla
+  costoMax = max (max(fila) for fila in costos)
+  costoTotal = 0
+
+  #se suman los costos C de la solución
+  for i in range(nodos):
+    costoTotal += costos[solucion[i]][solucion[i+1]]
+  n =  presedencia(solucion, reglas)
+  costoTotal += n* costoMax  
+  return costoTotal
 ```
 
 Los ejemplos de las instancias están en archivos con extensión .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
