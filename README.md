@@ -358,19 +358,11 @@ best_seq, best_cost = local_search(m, m_prec, 100, 10000)
 print (f'El mejor costo es {best_cost} con la siguiente secuencia \n{best_seq}')
 ```
 
-Los ejemplos de las instancias están en archivos con extensión .csv para leer los datos deberá hacerlo como en el siguiente ejemplo:
-El archivo .csv debe estár en el directorio de trabajo.
-```Python
-name = 'datos50.csv'
-m, m_prec = readFile(nodos, name)
-```
-**donde:** 
-- m es la matriz de costos.
-- m_prec es el arreglo de precedencias.
-- name es el nombre del archivo con todo y extensión.
+Los ejemplos de las instancias están en archivos con extensión .csv.
+
 
 Para la primera instancia con **100 nodos** nuestros resultados fueron:
-- Costo 1059
+- Costo 747
 - Tiempo 0.76108 seg.
 
 ## 5.- Ejemplo de ejecución
