@@ -28,6 +28,7 @@ Una de las aplicaciones de este problema cuando encontramos alguna situacion com
 
 **Optimizaciones en fábricas** por ejemplo, en la manufactura del automotor, en el sistema de pintado de los autos, para minimizar costos de cambio de color de la pintura.
 
+# Imagenes caidas
 
 ### 2.3 Ejemplo ### 
 **GRAFO DE EJEMPLO**
@@ -76,6 +77,8 @@ Para poder generar la solución inicial, se debe realizar los siguientes pasos:
 - Tomar los índices del arreglo ordenado para generar la solución inicial.
 - Por último, para completar los nodos a visitar y cumplir con la segunda restricción se añade al inicio del arreglo el nodo ![](https://latex.codecogs.com/svg.image?0) y al final el nodo ![](https://latex.codecogs.com/svg.image?N)
 
+
+# No usar imagenes no se ve en fondo negro y dificulta la coompreción
 
 Para el ejemplo que mostramos se tienen ![](https://latex.codecogs.com/svg.image?N=8), por lo que se generaron 6 números aleatorios, el vector sin ordenar es el siguiente: 
 
